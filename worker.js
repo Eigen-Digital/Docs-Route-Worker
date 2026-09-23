@@ -2,6 +2,10 @@ export default {
   async fetch(request) {
     const url = new URL(request.url);
 
+    if (url.pathname.startWith('/sheetx/')) {
+      return fetch(new Request('https://sheetx.pages.dev/', request));
+    }
+
     return new Response(
       `Docs router is working.\nPath: ${url.pathname}`,
       {
