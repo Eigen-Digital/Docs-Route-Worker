@@ -2,7 +2,7 @@ export default {
   async fetch(request) {
     const url = new URL(request.url);
 
-    if (url.pathname.startWith('/sheetx/')) {
+    if (url.pathname.startsWith('/sheetx/')) {
       return fetch(new Request('https://sheetx.pages.dev/', request));
     }
 
